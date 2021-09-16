@@ -10,6 +10,7 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import SeedIndex from './components/seed/SeedIndex'
 
 class App extends Component {
   constructor (props) {
@@ -85,6 +86,12 @@ class App extends Component {
             render={() => (
               <ChangePassword msgAlert={this.msgAlert} user={user} />
             )}
+          />
+          {/* seed routes */}
+          <AuthenticatedRoute
+            user={user}
+            path='/'
+            render={() => <SeedIndex msgAlert={this.msgAlert} user={user} />}
           />
         </main>
       </Fragment>
