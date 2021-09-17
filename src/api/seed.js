@@ -20,7 +20,7 @@ export const indexSeeds = (user) => {
     // method key sets the HTTP verb/method for this request
     // GET is the default method, so we can include or not up to us
     method: 'GET',
-    url: apiUrl + '/seeds',
+    url: apiUrl + '/seeds/',
     headers: {
       Authorization: `Token ${user.token}`
     }
