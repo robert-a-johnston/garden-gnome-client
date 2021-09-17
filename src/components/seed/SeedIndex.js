@@ -91,6 +91,8 @@ class SeedIndex extends React.Component {
             <ListGroupItem>Season: {seed.season}</ListGroupItem>
             <ListGroupItem>Light: {seed.light}</ListGroupItem>
             <ListGroupItem>Number: {seed.number}</ListGroupItem>
+            <ListGroupItem>Favorite: {seed.favorite.toString()}</ListGroupItem>
+            <ListGroupItem>Planted: {seed.planted.toString()}</ListGroupItem>
           </ListGroup>
           <Card.Body>
             <Link

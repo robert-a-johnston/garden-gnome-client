@@ -33,7 +33,6 @@ class SeedUpdate extends Component {
     showSeed(match.params.id, user)
       // sets new state of seed
       .then(res => this.setState({ seed: res.data.seed }))
-      .then(res => console.log('seed', this.state.seed))
       .catch(err => msgAlert({
         heading: 'Show Seed failed :(',
         message: 'Something went wrong: ' + err.message,
@@ -41,7 +40,7 @@ class SeedUpdate extends Component {
       }))
   }
 
-  // // handles state change for input
+  // handles state change for input
   handleChange = (event) => {
     const userInput = { [event.target.name]: event.target.value }
     this.setState(currState => {
