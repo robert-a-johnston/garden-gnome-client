@@ -4,7 +4,7 @@ import axios from 'axios'
 // Create Post Request create seed
 export const createSeed = (data, user) => {
   return axios({
-    url: apiUrl + '/seeds',
+    url: apiUrl + '/seeds/',
     method: 'POST',
     data: { seed: data },
     headers: {
@@ -20,21 +20,12 @@ export const indexSeeds = (user) => {
     // method key sets the HTTP verb/method for this request
     // GET is the default method, so we can include or not up to us
     method: 'GET',
-    url: apiUrl + '/seeds',
+    url: apiUrl + '/seeds/',
     headers: {
       Authorization: `Token ${user.token}`
     }
   })
 }
-// index all seeds, no token needed.
-// export const indexAllSeeds = () => {
-//   return axios({
-//     // method key sets the HTTP verb/method for this request
-//     // GET is the default method, so we can include or not up to us
-//     method: 'GET',
-//     url: apiUrl + '/seeds'
-//   })
-// }
 
 // GET /Seed/:id, requires token
 // get one seed data
@@ -51,8 +42,9 @@ export const showSeed = (id, user) => {
 // DELETE /Seed/:id, requires token
 // delete one seed
 export const deleteSeed = (id, user) => {
+  console.log('in delete', id)
   return axios({
-    url: apiUrl + '/seed/' + id,
+    url: apiUrl + '/seed/' + id + '/',
     method: 'DELETE',
     headers: {
       Authorization: `Token ${user.token}`

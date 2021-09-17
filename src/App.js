@@ -11,6 +11,8 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import SeedIndex from './components/seed/SeedIndex'
+import SeedCreate from './components/seed/SeedCreate'
+import SeedUpdate from './components/seed/SeedUpdate'
 
 class App extends Component {
   constructor (props) {
@@ -90,8 +92,18 @@ class App extends Component {
           {/* seed routes */}
           <AuthenticatedRoute
             user={user}
-            path='/'
+            exact path='/show-seeds'
             render={() => <SeedIndex msgAlert={this.msgAlert} user={user} />}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact path='/create-seed'
+            render={() => <SeedCreate msgAlert={this.msgAlert} user={user} />}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/update-seed/:id'
+            render={() => <SeedUpdate msgAlert={this.msgAlert} user={user} />}
           />
         </main>
       </Fragment>
