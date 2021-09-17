@@ -47,6 +47,7 @@ class CreateSeed extends Component {
       // destructuring props for use later
       const { msgAlert, history, user } = this.props
       // create seed API call
+      console.log('user', user)
       createSeed(this.state, user)
         .then(() =>
           msgAlert({

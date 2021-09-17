@@ -13,7 +13,7 @@ class SeedUpdate extends Component {
 
     this.state = {
       seed: {
-        name: 'somename',
+        name: '',
         type: '',
         season: '',
         light: '',
@@ -41,7 +41,7 @@ class SeedUpdate extends Component {
       }))
   }
 
-  // handles state change for input
+  // // handles state change for input
   handleChange = (event) => {
     const userInput = { [event.target.name]: event.target.value }
     this.setState(currState => {
@@ -50,21 +50,24 @@ class SeedUpdate extends Component {
     })
   }
 
-  // // changes state of input values
+  // changes state of input values
   // handleChange = (event) =>
   //   this.setState({
   //     [event.target.name]: event.target.value
-  //   })
+  //   },
+  //   console.log('in change', event.target.name, event.target.value))
 
     handleClick = (event) =>
       this.setState({
         [event.target.name]: event.target.checked
-      })
+      },
+      console.log('in click', event.target.name, event.target.checked))
 
     handleNumberChange = (event) =>
       this.setState({
-        [event.target.name]: parseInt(event.target.value)
-      })
+        [event.target.name]: event.target.value
+      },
+      console.log('in number', event.target.name, event.target.value))
 
     // updates seed on click
     onUpdateSeed = (event) => {
@@ -73,6 +76,7 @@ class SeedUpdate extends Component {
       // destructuring props for later use
       const { user, msgAlert, history, match } = this.props
       // updateSeed API call
+      console.log('seed state', this.state.seed, match.params.id, user)
       updateSeed(this.state.seed, match.params.id, user)
         .then(() => msgAlert({
           heading: 'Seed Updated!',
@@ -91,7 +95,7 @@ class SeedUpdate extends Component {
 
     render () {
       // destructuring state for later use
-      const { name, notes, favorite, planted, type, light, season, number } = this.state
+      const { name, notes, favorite, planted, type, light, season, number } = this.state.seed
       // create create seed form
       return (
         <>
@@ -169,6 +173,7 @@ class SeedUpdate extends Component {
                   <Form.Control
                     name='number'
                     type='number'
+                    min='0'
                     value={number}
                     onChange={this.handleChange}
                   />
