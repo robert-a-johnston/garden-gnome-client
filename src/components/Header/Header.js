@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 const authenticatedOptions = (
   <Fragment>
-    <NavLink exact to='/' className='nav-link'>Show Garden</NavLink>
+    <NavLink exact to='/garden' className='nav-link'>Show Garden</NavLink>
     <NavLink to='/show-seeds' className='nav-link'>Show Seeds</NavLink>
     <NavLink to='/create-seed' className='nav-link'>Create Seed</NavLink>
     <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
