@@ -49,24 +49,19 @@ class SeedUpdate extends Component {
     })
   }
 
-  // changes state of input values
-  // handleChange = (event) =>
-  //   this.setState({
-  //     [event.target.name]: event.target.value
-  //   },
-  //   console.log('in change', event.target.name, event.target.value))
+    // changes state of checkboxes favorite, planted
+    handleClick = (event) => {
+      const userInput = { [event.target.name]: event.target.checked }
+      this.setState(currState => {
+        return { seed: { ...currState.seed, ...userInput } }
+      })
+    }
 
-    handleClick = (event) =>
-      this.setState({
-        [event.target.name]: event.target.checked
-      },
-      console.log('in click', event.target.name, event.target.checked))
-
+    // changes number of seeds int
     handleNumberChange = (event) =>
       this.setState({
         [event.target.name]: event.target.value
-      },
-      console.log('in number', event.target.name, event.target.value))
+      })
 
     // updates seed on click
     onUpdateSeed = (event) => {
@@ -75,7 +70,6 @@ class SeedUpdate extends Component {
       // destructuring props for later use
       const { user, msgAlert, history, match } = this.props
       // updateSeed API call
-      console.log('seed state', this.state.seed, match.params.id, user)
       updateSeed(this.state.seed, match.params.id, user)
         .then(() => msgAlert({
           heading: 'Seed Updated!',
@@ -110,13 +104,14 @@ class SeedUpdate extends Component {
                     name='favorite'
                     type='checkbox'
                     label='Favorite'
-                    value={favorite}
+                    checked={favorite}
                     onClick={this.handleClick}/>
                   <Form.Check
                     inline
+                    name='planted'
                     type='checkbox'
                     label='Planted'
-                    value={planted}
+                    checked={planted}
                     onClick={this.handleClick}/>
                 </Form.Group>
                 <Form.Group controlId='title'>

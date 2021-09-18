@@ -1,0 +1,9 @@
+.garden-list {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+h1 {
+  al: center; 
+}

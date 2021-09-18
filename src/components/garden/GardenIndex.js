@@ -6,11 +6,11 @@ import Card from 'react-bootstrap/Card'
 import { ListGroup, ListGroupItem } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import './SeedIndex.css'
+import './GardenIndex.css'
 
 // create index of all seed class and constructor with state
 // also deletes seeds and sends to update seed page
-class SeedIndex extends React.Component {
+class GardenIndex extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -80,7 +80,8 @@ class SeedIndex extends React.Component {
     }
 
     // create list of seeds
-    const seedsJsx = this.state.seeds.map((seed) => (
+    const filteredSeedsJsx = this.state.seeds.filter((seed) => seed.planted === true)
+    const gardenSeedsJsx = filteredSeedsJsx.map((seed) => (
       <li key={seed.id}>
         <Form.Group className='mb-3' id='formGridCheckbox'>
           <Form.Check
@@ -130,12 +131,15 @@ class SeedIndex extends React.Component {
     ))
 
     return (
-      <div className='list'>
+      <div className='garden-list'>
+        <h1>Seeds In Your Garden</h1>
         {/* display seeds with last entry first */}
-        <ul className='list-unstyled'>{seedsJsx.reverse()}</ul>
+        <div>
+          <ul className='list-unstyled'>{gardenSeedsJsx.reverse()}</ul>
+        </div>
       </div>
     )
   }
 }
 
-export default withRouter(SeedIndex)
+export default withRouter(GardenIndex)

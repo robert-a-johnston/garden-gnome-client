@@ -42,7 +42,6 @@ export const showSeed = (id, user) => {
 // DELETE /Seed/:id, requires token
 // delete one seed
 export const deleteSeed = (id, user) => {
-  console.log('in delete', id)
   return axios({
     url: apiUrl + '/seed/' + id + '/',
     method: 'DELETE',
@@ -54,7 +53,6 @@ export const deleteSeed = (id, user) => {
 
 // PATCH /seed/:id, requires token
 export const updateSeed = (data, id, user) => {
-  console.log('update seed api', data, id, user)
   return axios({
     url: apiUrl + '/seed/' + id + '/',
     method: 'patch',

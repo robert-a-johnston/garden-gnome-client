@@ -13,6 +13,7 @@ import ChangePassword from './components/auth/ChangePassword'
 import SeedIndex from './components/seed/SeedIndex'
 import SeedCreate from './components/seed/SeedCreate'
 import SeedUpdate from './components/seed/SeedUpdate'
+import GardenIndex from './components/garden/GardenIndex'
 
 class App extends Component {
   constructor (props) {
@@ -104,6 +105,11 @@ class App extends Component {
             user={user}
             path='/update-seed/:id'
             render={() => <SeedUpdate msgAlert={this.msgAlert} user={user} />}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact path='/'
+            render={() => <GardenIndex msgAlert={this.msgAlert} user={user} />}
           />
         </main>
       </Fragment>
