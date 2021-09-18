@@ -108,7 +108,7 @@ class App extends Component {
           />
           <AuthenticatedRoute
             user={user}
-            exact path='/'
+            exact path='/garden'
             render={() => <GardenIndex msgAlert={this.msgAlert} user={user} />}
           />
         </main>

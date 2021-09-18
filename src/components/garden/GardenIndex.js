@@ -91,13 +91,6 @@ class GardenIndex extends React.Component {
             label='Favorite'
             checked={seed.favorite}
             readOnly={true}/>
-          <Form.Check
-            inline
-            name='planted'
-            type='checkbox'
-            label='Planted'
-            checked={seed.planted}
-            readOnly={true}/>
         </Form.Group>
         <Card
           style={{ width: '18rem' }}
