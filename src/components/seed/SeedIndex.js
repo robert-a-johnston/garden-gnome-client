@@ -5,7 +5,7 @@ import { showIndexFailure, showDeleteSeedSuccess, showDeleteSeedFailure } from '
 // import Card from 'react-bootstrap/Card'
 // import { ListGroup, ListGroupItem, Container } from 'react-bootstrap'
 // import Button from 'react-bootstrap/Button'
-import SeedShowForm from './SeedShowCard'
+import SeedShowCard from './SeedShowCard'
 import './SeedIndex.css'
 
 // create index of all seed class and constructor with state
@@ -83,7 +83,7 @@ class SeedIndex extends React.Component {
     // create list of seeds
     const seedsJsx = this.state.seeds.map((seed) => (
       <li key={seed.id}>
-        <SeedShowForm
+        <SeedShowCard
           key={seed.id}
           id={seed.id}
           name={seed.name}

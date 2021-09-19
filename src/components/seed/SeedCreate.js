@@ -75,9 +75,8 @@ class CreateSeed extends Component {
           <div className='row' id='showSeed'>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
               <center>
-                <h3 className='register'>Create Seed</h3>
-
-                <Form style={{ width: '20rem', color: 'rgb(0, 153, 0)', fontWeight: 'bold' }} onSubmit={this.onCreateSeed}>
+                <h2 className='register'>Create Seed</h2>
+                <Form onSubmit={this.onCreateSeed}>
                   <Form.Group className='mb-3' id='formGridCheckbox'>
                     <Form.Check
                       inline

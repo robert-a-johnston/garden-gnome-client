@@ -95,10 +95,10 @@ class SeedUpdate extends Component {
           <div className='row' id='showSeed'>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
               <center>
-                <h3 className='register'>Update Seed Information</h3>
+                <h2>Update Seed Information</h2>
               </center>
               <center>
-                <Form style={{ width: '20rem', color: 'brown', fontWeight: 'bold' }} onSubmit={this.onUpdateSeed}>
+                <Form style={{ width: '20rem', fontWeight: 'bold' }} onSubmit={this.onUpdateSeed}>
                   <Form.Group className='mb-3' id='formGridCheckbox'>
                     <Form.Check
                       inline

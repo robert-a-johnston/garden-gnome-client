@@ -80,21 +80,19 @@ class GardenIndex extends React.Component {
     const filteredSeedsJsx = this.state.seeds.filter((seed) => seed.planted === true)
     const gardenSeedsJsx = filteredSeedsJsx.map((seed) => (
       <li key={seed.id}>
-        <li key={seed.id}>
-          <SeedShowCard
-            key={seed.id}
-            id={seed.id}
-            name={seed.name}
-            type={seed.type}
-            season={seed.season}
-            light={seed.light}
-            favorite={seed.favorite}
-            planted={seed.planted}
-            number={seed.number}
-            notes={seed.notes}
-            handleDeleteSeed={this.handleDeleteSeed}
-          />
-        </li>
+        <SeedShowCard
+          key={seed.id}
+          id={seed.id}
+          name={seed.name}
+          type={seed.type}
+          season={seed.season}
+          light={seed.light}
+          favorite={seed.favorite}
+          planted={seed.planted}
+          number={seed.number}
+          notes={seed.notes}
+          handleDeleteSeed={this.handleDeleteSeed}
+        />
       </li>
     ))
 
