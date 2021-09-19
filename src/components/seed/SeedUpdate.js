@@ -126,7 +126,6 @@ class SeedUpdate extends Component {
                 </Form.Group>
                 <br/>
                 <Form.Control
-                  required
                   name='type'
                   value={type}
                   as='select'
@@ -138,7 +137,6 @@ class SeedUpdate extends Component {
                 </Form.Control>
                 <br/>
                 <Form.Control
-                  required
                   name='light'
                   value={light}
                   as='select'
@@ -150,7 +148,6 @@ class SeedUpdate extends Component {
                 </Form.Control>
                 <br/>
                 <Form.Control
-                  required
                   name='season'
                   value={season}
                   as='select'
@@ -190,7 +187,7 @@ class SeedUpdate extends Component {
                     Submit
                   </Button>
                 </div>
-                <Link to={'/show-seeds'} className="btn btn-primary">Cancel</Link>
+                <Link to={'/show-seeds'} className="btn">Cancel</Link>
               </Form>
             </div>
           </div>

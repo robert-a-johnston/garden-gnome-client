@@ -114,14 +114,14 @@ class SeedIndex extends React.Component {
           <Card.Body>
             <Link
               to={`/update-seed/${seed.id}`}
-              className='btn btn-outline-dark btn-sm bg-primary'>
+              className='btn btn-sm'>
               Update Seed Info
             </Link>
             <Button
+              variant='custom'
               size='sm'
               id={seed.id}
-              onClick={this.handleDeleteSeed}
-              variant='danger'>
+              onClick={this.handleDeleteSeed}>
               Delete Seed
             </Button>
           </Card.Body>
@@ -132,7 +132,7 @@ class SeedIndex extends React.Component {
     return (
       <div className='list'>
         {/* display seeds with last entry first */}
-        <ul className='list-unstyled'>{seedsJsx.reverse()}</ul>
+        <ul className='d-flex flex-wrap align-content-center list-unstyled'>{seedsJsx.reverse()}</ul>
       </div>
     )
   }

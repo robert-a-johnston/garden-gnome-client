@@ -107,7 +107,6 @@ class CreateSeed extends Component {
                 </Form.Group>
                 <br/>
                 <Form.Control
-                  required
                   name='type'
                   value={type}
                   as='select'
@@ -119,7 +118,6 @@ class CreateSeed extends Component {
                 </Form.Control>
                 <br/>
                 <Form.Control
-                  required
                   name='light'
                   value={light}
                   as='select'
@@ -131,7 +129,6 @@ class CreateSeed extends Component {
                 </Form.Control>
                 <br/>
                 <Form.Control
-                  required
                   name='season'
                   value={season}
                   as='select'
@@ -148,6 +145,7 @@ class CreateSeed extends Component {
                   <Form.Control
                     name='number'
                     type='number'
+                    min='0'
                     value={number}
                     onChange={this.handleChange}
                   />
