@@ -16,6 +16,7 @@ import SeedUpdate from './components/seed/SeedUpdate'
 import GardenIndex from './components/garden/GardenIndex'
 import SeedShowFavorites from './components/seed/SeedShowFavorites'
 import SeedShowVegetables from './components/seed/SeedShowVegetables'
+import Footer from './components/Footer'
 
 class App extends Component {
   constructor (props) {
@@ -52,6 +53,7 @@ class App extends Component {
       <>
         <h1>Garden Gnome</h1><Fragment>
           <Header user={user} />
+          <Footer/>
           {msgAlerts.map((msgAlert) => (
             <AutoDismissAlert
               key={msgAlert.id}
