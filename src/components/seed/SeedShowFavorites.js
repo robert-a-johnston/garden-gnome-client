@@ -97,7 +97,7 @@ class SeedShowFavorites extends React.Component {
 
     return (
       <div className='favorite-list'>
-        <h1>Your Favorite Seeds</h1>
+        <h2>Your Favorite Seeds</h2>
         {/* display seeds with last entry first */}
         <div>
           <ul className='d-flex flex-wrap align-content-center list-unstyled'>{favoriteSeedsJsx.reverse()}</ul>

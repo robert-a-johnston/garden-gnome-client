@@ -15,3 +15,6 @@
   .add-margin {
     margin-left: 250px;
   }
+  span {
+    color: blue;
+  }

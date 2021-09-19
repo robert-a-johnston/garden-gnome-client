@@ -97,7 +97,7 @@ class SeedShowVegetables extends React.Component {
 
     return (
       <div className='vegetable-list'>
-        <h1>Your Vegetable Seeds</h1>
+        <h2>Your Vegetable Seeds</h2>
         {/* display seeds with last entry first */}
         <div>
           <ul className='d-flex flex-wrap align-content-center list-unstyled'>{vegetableSeedsJsx.reverse()}</ul>

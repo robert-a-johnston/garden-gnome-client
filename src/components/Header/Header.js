@@ -7,10 +7,10 @@ import './Header.css'
 
 const authenticatedOptions = (
   <Fragment>
-    <NavLink exact to='/garden' className='nav-link'>Show Garden</NavLink>
-    <NavLink to='/show-seeds' className='nav-link'>Show Seeds</NavLink>
     <NavLink to='/create-seed' className='nav-link'>Create Seed</NavLink>
     <NavDropdown title="Seed Sorter" id="navbarScrollingDropdown">
+      <NavDropdown.Item as={NavLink} to='/show-seeds'>All Of Your Seeds</NavDropdown.Item>
+      <NavDropdown.Item as={NavLink} to='/garden'>Seeds In the Garden</NavDropdown.Item>
       <NavDropdown.Item as={NavLink} to='/favorites'>Your Favorite Seeds</NavDropdown.Item>
       <NavDropdown.Item as={NavLink} to='/vegetables'>Vegetable Seeds</NavDropdown.Item>
     </NavDropdown>
@@ -35,9 +35,9 @@ const Header = ({ user }) => (
     </Navbar.Brand>
     <Navbar.Toggle aria-controls='basic-navbar-nav' />
     <Navbar.Collapse id='basic-navbar-nav'>
-      <Nav className='ml-auto'>
+      <Nav className='ml-auto m-auto'>
         {user && (
-          <span className='navbar-text mr-2'>Welcome, {user.email}</span>
+          <span className='navbar-text mr-2' id='add-color'>Welcome, {user.email}</span>
         )}
         {user ? authenticatedOptions : unauthenticatedOptions}
       </Nav>

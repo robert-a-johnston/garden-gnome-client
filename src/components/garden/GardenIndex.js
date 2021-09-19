@@ -98,7 +98,7 @@ class GardenIndex extends React.Component {
 
     return (
       <div className='garden-list'>
-        <h1>Seeds In Your Garden</h1>
+        <h2>Seeds In Your Garden</h2>
         {/* display seeds with last entry first */}
         <div>
           <ul className='d-flex flex-wrap align-content-center list-unstyled'>{gardenSeedsJsx.reverse()}</ul>
