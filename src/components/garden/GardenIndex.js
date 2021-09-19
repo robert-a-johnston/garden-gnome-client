@@ -108,14 +108,15 @@ class GardenIndex extends React.Component {
           <Card.Body>
             <Link
               to={`/update-seed/${seed.id}`}
-              className='btn btn-outline-dark btn-sm bg-primary'>
+              className='btn btn-sm'>
               Update Seed Info
             </Link>
             <Button
+              className='deleteButton'
+              variant='custom'
               size='sm'
               id={seed.id}
-              onClick={this.handleDeleteSeed}
-              variant='danger'>
+              onClick={this.handleDeleteSeed}>
               Delete Seed
             </Button>
           </Card.Body>
@@ -128,7 +129,7 @@ class GardenIndex extends React.Component {
         <h1>Seeds In Your Garden</h1>
         {/* display seeds with last entry first */}
         <div>
-          <ul className='list-unstyled'>{gardenSeedsJsx.reverse()}</ul>
+          <ul className='d-flex flex-wrap align-content-center list-unstyled'>{gardenSeedsJsx.reverse()}</ul>
         </div>
       </div>
     )

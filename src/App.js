@@ -47,72 +47,63 @@ class App extends Component {
     const { msgAlerts, user } = this.state
 
     return (
-      <Fragment>
-	      <Header user={user} />
-	      {msgAlerts.map((msgAlert) => (
-          <AutoDismissAlert
-            key={msgAlert.id}
-            heading={msgAlert.heading}
-            variant={msgAlert.variant}
-            message={msgAlert.message}
-            id={msgAlert.id}
-            deleteAlert={this.deleteAlert}
-          />
-        ))}
-	      <main className='container'>
-	        <Route
-            path='/sign-up'
-            render={() => (
-              <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
-            )}
-          />
-          <Route
-            path='/sign-in'
-            render={() => (
-              <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
-            )}
-          />
-          <AuthenticatedRoute
-            user={user}
-            path='/sign-out'
-            render={() => (
-              <SignOut
-                msgAlert={this.msgAlert}
-                clearUser={this.clearUser}
-                user={user}
-              />
-            )}
-          />
-          <AuthenticatedRoute
-            user={user}
-            path='/change-password'
-            render={() => (
-              <ChangePassword msgAlert={this.msgAlert} user={user} />
-            )}
-          />
-          {/* seed routes */}
-          <AuthenticatedRoute
-            user={user}
-            exact path='/show-seeds'
-            render={() => <SeedIndex msgAlert={this.msgAlert} user={user} />}
-          />
-          <AuthenticatedRoute
-            user={user}
-            exact path='/create-seed'
-            render={() => <SeedCreate msgAlert={this.msgAlert} user={user} />}
-          />
-          <AuthenticatedRoute
-            user={user}
-            path='/update-seed/:id'
-            render={() => <SeedUpdate msgAlert={this.msgAlert} user={user} />}
-          />
-          <AuthenticatedRoute
-            user={user}
-            exact path='/garden'
-            render={() => <GardenIndex msgAlert={this.msgAlert} user={user} />}
-          />
-        </main>
-      </Fragment>
+      <>
+        <h1>Garden Gnome</h1><Fragment>
+          <Header user={user} />
+          {msgAlerts.map((msgAlert) => (
+            <AutoDismissAlert
+              key={msgAlert.id}
+              heading={msgAlert.heading}
+              variant={msgAlert.variant}
+              message={msgAlert.message}
+              id={msgAlert.id}
+              deleteAlert={this.deleteAlert} />
+          ))}
+          <main className='container'>
+            <Route
+              path='/sign-up'
+              render={() => (
+                <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
+              )} />
+            <Route
+              path='/sign-in'
+              render={() => (
+                <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+              )} />
+            <AuthenticatedRoute
+              user={user}
+              path='/sign-out'
+              render={() => (
+                <SignOut
+                  msgAlert={this.msgAlert}
+                  clearUser={this.clearUser}
+                  user={user} />
+              )} />
+            <AuthenticatedRoute
+              user={user}
+              path='/change-password'
+              render={() => (
+                <ChangePassword msgAlert={this.msgAlert} user={user} />
+              )} />
+            {/* seed routes */}
+            <AuthenticatedRoute
+              user={user}
+              exact path='/show-seeds'
+              render={() => <SeedIndex msgAlert={this.msgAlert} user={user} />} />
+            <AuthenticatedRoute
+              user={user}
+              exact path='/create-seed'
+              render={() => <SeedCreate msgAlert={this.msgAlert} user={user} />} />
+            <AuthenticatedRoute
+              user={user}
+              path='/update-seed/:id'
+              render={() => <SeedUpdate msgAlert={this.msgAlert} user={user} />} />
+            <AuthenticatedRoute
+              user={user}
+              exact path='/garden'
+              render={() => <GardenIndex msgAlert={this.msgAlert} user={user} />} />
+          </main>
+        </Fragment></>
     )
   }
 }
