@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import { NavLink } from 'react-router-dom'
 import './Header.css'
 
@@ -9,6 +10,10 @@ const authenticatedOptions = (
     <NavLink exact to='/garden' className='nav-link'>Show Garden</NavLink>
     <NavLink to='/show-seeds' className='nav-link'>Show Seeds</NavLink>
     <NavLink to='/create-seed' className='nav-link'>Create Seed</NavLink>
+    <NavDropdown title="Seed Sorter" id="navbarScrollingDropdown">
+      <NavDropdown.Item as={NavLink} to='/favorites'>Your Favorite Seeds</NavDropdown.Item>
+      <NavDropdown.Item as={NavLink} to='/vegetables'>Vegetable Seeds</NavDropdown.Item>
+    </NavDropdown>
     <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
     <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
   </Fragment>

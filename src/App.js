@@ -14,6 +14,8 @@ import SeedIndex from './components/seed/SeedIndex'
 import SeedCreate from './components/seed/SeedCreate'
 import SeedUpdate from './components/seed/SeedUpdate'
 import GardenIndex from './components/garden/GardenIndex'
+import SeedShowFavorites from './components/seed/SeedShowFavorites'
+import SeedShowVegetables from './components/seed/SeedShowVegetables'
 
 class App extends Component {
   constructor (props) {
@@ -102,6 +104,14 @@ class App extends Component {
               user={user}
               exact path='/garden'
               render={() => <GardenIndex msgAlert={this.msgAlert} user={user} />} />
+            <AuthenticatedRoute
+              user={user}
+              exact path='/favorites'
+              render={() => <SeedShowFavorites msgAlert={this.msgAlert} user={user} />} />
+            <AuthenticatedRoute
+              user={user}
+              exact path='/vegetables'
+              render={() => <SeedShowVegetables msgAlert={this.msgAlert} user={user} />} />
           </main>
         </Fragment></>
     )
