@@ -1,11 +1,11 @@
 import React from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { indexSeeds, deleteSeed } from '../../api/seed'
 import { showIndexFailure, showDeleteSeedSuccess, showDeleteSeedFailure } from '../AutoDismissAlert/messages'
-import Card from 'react-bootstrap/Card'
-import { ListGroup, ListGroupItem } from 'react-bootstrap'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+// import Card from 'react-bootstrap/Card'
+// import { ListGroup, ListGroupItem, Container } from 'react-bootstrap'
+// import Button from 'react-bootstrap/Button'
+import SeedShowForm from './SeedShowCard'
 import './SeedIndex.css'
 
 // create index of all seed class and constructor with state
@@ -40,6 +40,7 @@ class SeedIndex extends React.Component {
   }
 
   // deletes seed on button click
+  // button on SeedShowCard
   handleDeleteSeed = (event) => {
     const { user, msgAlert } = this.props
     const id = event.target.id
@@ -82,50 +83,19 @@ class SeedIndex extends React.Component {
     // create list of seeds
     const seedsJsx = this.state.seeds.map((seed) => (
       <li key={seed.id}>
-        <Form.Group className='mb-3' id='formGridCheckbox'>
-          <Form.Check
-            inline
-            name='favorite'
-            type='checkbox'
-            label='Favorite'
-            checked={seed.favorite}
-            readOnly={true}/>
-          <Form.Check
-            inline
-            name='planted'
-            type='checkbox'
-            label='Planted'
-            checked={seed.planted}
-            readOnly={true}/>
-        </Form.Group>
-        <Card
-          style={{ width: '18rem' }}
-          bg='success'>
-          <Card.Body>
-            <Card.Title>{seed.name}</Card.Title>
-            <Card.Text>Notes: {seed.notes}</Card.Text>
-          </Card.Body>
-          <ListGroup className="list-group-flush">
-            <ListGroupItem>Type: {seed.type}</ListGroupItem>
-            <ListGroupItem>Season: {seed.season}</ListGroupItem>
-            <ListGroupItem>Light: {seed.light}</ListGroupItem>
-            <ListGroupItem>Number: {seed.number}</ListGroupItem>
-          </ListGroup>
-          <Card.Body>
-            <Link
-              to={`/update-seed/${seed.id}`}
-              className='btn btn-sm'>
-              Update Seed Info
-            </Link>
-            <Button
-              variant='custom'
-              size='sm'
-              id={seed.id}
-              onClick={this.handleDeleteSeed}>
-              Delete Seed
-            </Button>
-          </Card.Body>
-        </Card>
+        <SeedShowForm
+          key={seed.id}
+          id={seed.id}
+          name={seed.name}
+          type={seed.type}
+          season={seed.season}
+          light={seed.light}
+          favorite={seed.favorite}
+          planted={seed.planted}
+          number={seed.number}
+          notes={seed.notes}
+          handleDeleteSeed={this.handleDeleteSeed}
+        />
       </li>
     ))
 
