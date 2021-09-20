@@ -63,9 +63,6 @@ class SeedUpdate extends Component {
         return { seed: { ...currState.seed, ...userInput } }
       })
     }
-    // this.setState({
-    //   [event.target.name]: parseInt(event.target.value)
-    // })
 
     // updates seed on click
     onUpdateSeed = (event) => {
