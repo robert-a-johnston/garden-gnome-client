@@ -6,7 +6,6 @@ import { showIndexFailure, showDeleteSeedSuccess, showDeleteSeedFailure } from '
 // import { ListGroup, ListGroupItem, Container } from 'react-bootstrap'
 // import Button from 'react-bootstrap/Button'
 import SeedShowCard from './SeedShowCard'
-import './SeedIndex.css'
 
 // create index of all seed class and constructor with state
 // also deletes seeds and sends to update seed page
