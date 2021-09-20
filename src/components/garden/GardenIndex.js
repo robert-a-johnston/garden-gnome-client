@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom'
 import { indexSeeds, deleteSeed } from '../../api/seed'
 import { showIndexFailure, showDeleteSeedSuccess, showDeleteSeedFailure } from '../AutoDismissAlert/messages'
 import SeedShowCard from '../seed/SeedShowCard'
-import './GardenIndex.css'
 
 // create index of all seed class and constructor with state
 // also deletes seeds and sends to update seed page

@@ -71,6 +71,7 @@ render () {
             </Form.Group>
             <Form.Group controlId='password'>
               <Form.Label>Password</Form.Label>
+              <Form.Label>Minimum 5 Characters</Form.Label>
               <Form.Control
                 required
                 name='password'
