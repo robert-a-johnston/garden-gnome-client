@@ -16,6 +16,7 @@ import SeedUpdate from './components/seed/SeedUpdate'
 import GardenIndex from './components/garden/GardenIndex'
 import SeedShowFavorites from './components/seed/SeedShowFavorites'
 import SeedShowVegetables from './components/seed/SeedShowVegetables'
+import Weather from './components/Weather/Weather'
 import Footer from './components/Footer'
 
 class App extends Component {
@@ -89,7 +90,7 @@ class App extends Component {
               render={() => (
                 <ChangePassword msgAlert={this.msgAlert} user={user} />
               )} />
-            {/* seed routes */}
+            {/* CRUD seed routes */}
             <AuthenticatedRoute
               user={user}
               exact path='/show-seeds'
@@ -102,6 +103,7 @@ class App extends Component {
               user={user}
               path='/update-seed/:id'
               render={() => <SeedUpdate msgAlert={this.msgAlert} user={user} />} />
+            {/* sorting routs */}
             <AuthenticatedRoute
               user={user}
               exact path='/garden'
@@ -114,6 +116,10 @@ class App extends Component {
               user={user}
               exact path='/vegetables'
               render={() => <SeedShowVegetables msgAlert={this.msgAlert} user={user} />} />
+            <AuthenticatedRoute
+              user={user}
+              exact path='/weather'
+              render={() => <Weather msgAlert={this.msgAlert} user={user} />} />
           </main>
         </Fragment></>
     )

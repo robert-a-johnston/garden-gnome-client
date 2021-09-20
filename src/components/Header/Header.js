@@ -8,6 +8,7 @@ import './Header.css'
 const authenticatedOptions = (
   <Fragment>
     <NavLink to='/create-seed' className='nav-link'>Create Seed</NavLink>
+    <NavLink to='/weather' className='nav-link'>Weather</NavLink>
     <NavDropdown title="Seed Sorter" id="navbarScrollingDropdown">
       <NavDropdown.Item as={NavLink} to='/show-seeds'>All Of Your Seeds</NavDropdown.Item>
       <NavDropdown.Item as={NavLink} to='/garden'>Seeds In the Garden</NavDropdown.Item>
