@@ -10,7 +10,6 @@ const SeedCreateUpdateForm = ({
   notes, onCreateSeed, handleClick, handleChange, handleNumberChange
 }) => (
   <Form onSubmit={onCreateSeed}>
-    {console.log('pl, fa form', planted, favorite)}
     <Form.Group className='mb-3' id='formGridCheckbox'>
       <Form.Check
         inline

@@ -98,7 +98,6 @@ class SeedUpdate extends Component {
               <center>
                 <h2>Update Seed Information</h2>
               </center>
-              {console.log('pl, fa ', planted, favorite)}
               <center>
                 <SeedCreateUpdateForm
                   name={name}

@@ -45,14 +45,6 @@ class SeedIndex extends React.Component {
     const id = event.target.id
     // api call delete seed from database
     deleteSeed(id, user)
-    // show seeds after delete
-    indexSeeds(user)
-      .then((response) =>
-        this.setState({
-          seeds: response.data.seeds,
-          loading: false
-        })
-      )
       .then(() =>
         msgAlert({
           heading: 'Deleted seed successfully',
@@ -65,6 +57,14 @@ class SeedIndex extends React.Component {
           heading: 'Delete seed failed :(',
           message: showDeleteSeedFailure,
           variant: 'danger'
+        })
+      )
+    // show seeds after delete
+    indexSeeds(user)
+      .then((response) =>
+        this.setState({
+          seeds: response.data.seeds,
+          loading: false
         })
       )
   }
