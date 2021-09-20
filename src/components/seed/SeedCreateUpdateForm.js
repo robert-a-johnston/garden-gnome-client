@@ -17,14 +17,14 @@ const SeedCreateUpdateForm = ({
         name='favorite'
         type='checkbox'
         label='Favorite'
-        value={favorite}
+        checked={favorite}
         onClick={handleClick}/>
       <Form.Check
         inline
         name='planted'
         type='checkbox'
         label='Planted'
-        value={planted}
+        checked={planted}
         onClick={handleClick}/>
     </Form.Group>
     <Form.Group controlId='title'>
