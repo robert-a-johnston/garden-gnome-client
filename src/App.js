@@ -6,16 +6,19 @@ import { v4 as uuid } from 'uuid'
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
+// auth path imports
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+// seed path imports
 import SeedIndex from './components/seed/SeedIndex'
 import SeedCreate from './components/seed/SeedCreate'
 import SeedUpdate from './components/seed/SeedUpdate'
 import GardenIndex from './components/garden/GardenIndex'
 import SeedShowFavorites from './components/seed/SeedShowFavorites'
 import SeedShowVegetables from './components/seed/SeedShowVegetables'
+// weather and footer paths
 import Weather from './components/Weather/Weather'
 import Footer from './components/Footer'
 
@@ -28,8 +31,10 @@ class App extends Component {
     }
   }
 
+  // sets state of user on sign in
   setUser = (user) => this.setState({ user })
 
+  // removes user state on sign out
   clearUser = () => this.setState({ user: null })
 
   deleteAlert = (id) => {
@@ -38,6 +43,7 @@ class App extends Component {
     })
   }
 
+  // creates message for app
   msgAlert = ({ heading, message, variant }) => {
     const id = uuid()
     this.setState((state) => {
@@ -103,7 +109,7 @@ class App extends Component {
               user={user}
               path='/update-seed/:id'
               render={() => <SeedUpdate msgAlert={this.msgAlert} user={user} />} />
-            {/* sorting routs */}
+            {/* sorting routes */}
             <AuthenticatedRoute
               user={user}
               exact path='/garden'
@@ -116,6 +122,7 @@ class App extends Component {
               user={user}
               exact path='/vegetables'
               render={() => <SeedShowVegetables msgAlert={this.msgAlert} user={user} />} />
+            {/* Weather component route */}
             <AuthenticatedRoute
               user={user}
               exact path='/weather'

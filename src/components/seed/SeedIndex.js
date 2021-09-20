@@ -44,9 +44,9 @@ class SeedIndex extends React.Component {
   handleDeleteSeed = (event) => {
     const { user, msgAlert } = this.props
     const id = event.target.id
+    // api call delete seed from database
     deleteSeed(id, user)
-    // Redirect to the list of seeds
-    // .then(() => history.push('/show-seeds/'))
+    // show seeds after delete
     indexSeeds(user)
       .then((response) =>
         this.setState({

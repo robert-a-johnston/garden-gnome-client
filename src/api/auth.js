@@ -1,6 +1,6 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
-
+// API connections to backend for all auth routes
 export const signUp = (credentials) => {
   return axios({
     method: 'POST',

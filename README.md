@@ -1,6 +1,9 @@
 # Garden Gnome: A Description
-Garden Gnome is an application that lets a user sign in and track the seeds that they have.  Seeds can be added, updated, and removed.  The user can see what seeds they have and what seeds have been planted in the garden.  The user can see the information about each seed, like type, planting season, and sun requirements.  The user can also mark seeds as favorite and add additional notes about each seed.
-
+Garden Gnome is an application that lets a user sign in and track the seeds that they have.  Seeds can be added, updated, and removed.  The user can see what seeds they have and what seeds have been planted in the garden by labeling seeds as planted.  The user can see the information about each seed, like type, planting season, and sun requirements.  The user can also mark seeds as favorite and add additional notes about each seed.
+# INSTALLATION INSTRUCTIONS
+- Clone this project.
+- Run ``npm install`` to install dependencies.
+- Run ``npm start`` to run development server.
 # IMPORTANT LINKS
 - Garden Gnome Deployed Client: [DEPLOYED CLIENT](https://robert-a-johnston.github.io/garden-gnome-client/)
 - Garden Gnome API Repo: [API REPO](https://github.com/robert-a-johnston/garden-gnome-API) 
@@ -27,11 +30,15 @@ In order to fix this problem the developer decided to create a digital seed repo
 - React Bootstrap
   
 # FUTURE DEVELOPMENT PLANS
-- Add seed sorter.
+- Modify seed sorter.
 - Add design tweaks.
+- Add images to seed model.
 - Add more than one garden and track what seeds are in each garden.
 
 # WIRE-FRAMES
 ![Wire-frames](./imgs/GardenGnomeWireFrames.jpeg)
 # SCREEN SHOT
-![Screen-shot](./imgs/GardenGnomeScreenshot.jpeg)
+![SHOW ALL SEEDS](./imgs/GardenGnomeAllSeedsSS.jpeg)
+![CHANGE PASSWORD](./imgs/GardenGnomeChangePasswordSS.jpeg)
+![GARDEN SEEDS](./imgs/GardenGnomeGardenSS.JPG)
+![WEATHER](./imgs/GardenGnomeWeatherSS.JPG)

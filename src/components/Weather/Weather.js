@@ -19,6 +19,7 @@ class Weather extends Component {
     }
   }
 
+  // handles change of input fields
   handleChange = (event) =>
     this.setState({
       [event.target.name]: event.target.value
@@ -56,9 +57,9 @@ class Weather extends Component {
     const { city, state, location, country, temperature, humidity, conditions } = this.state
     return (
       <>
-
         <div className='weatherRow'>
           <div className='weatherForm'>
+            {/* Weather city state input form */}
             <Form onSubmit={this.onGetWeather}>
               <Form.Group controlId='weather'>
                 <Form.Control
@@ -83,7 +84,7 @@ class Weather extends Component {
             </Form>
           </div>
           <div className='tableContainer'>
-            {/* Table with values display */}
+            {/* Table with weather values display */}
             <Table className='weatherTable' hover>
               <tbody>
                 <tr>

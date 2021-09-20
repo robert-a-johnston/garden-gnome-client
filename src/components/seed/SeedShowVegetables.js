@@ -75,8 +75,9 @@ class SeedShowVegetables extends React.Component {
       <h3>No seeds</h3>
     }
 
-    // create list of seeds
+    // filters seeds for vegetable seed type
     const filteredSeedsJsx = this.state.seeds.filter((seed) => seed.type === 'Vegetable')
+    // creates list of vegetable seeds
     const vegetableSeedsJsx = filteredSeedsJsx.map((seed) => (
       <li key={seed.id}>
         <SeedShowCard

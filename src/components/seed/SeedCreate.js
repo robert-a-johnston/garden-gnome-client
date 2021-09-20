@@ -28,11 +28,13 @@ class CreateSeed extends Component {
         [event.target.name]: event.target.value
       })
 
+    // handles change of state on check-boxes
     handleClick = (event) =>
       this.setState({
         [event.target.name]: event.target.checked
       })
 
+    // handles change of state on number of seeds
     handleNumberChange = (event) =>
       this.setState({
         [event.target.name]: parseInt(event.target.value)

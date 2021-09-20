@@ -75,8 +75,9 @@ class SeedShowFavorites extends React.Component {
       <h3>No seeds</h3>
     }
 
-    // create list of seeds
+    // creates array of seeds filtered by favorite attribute
     const filteredSeedsJsx = this.state.seeds.filter((seed) => seed.favorite === true)
+    // displays array of filtered seeds
     const favoriteSeedsJsx = filteredSeedsJsx.map((seed) => (
       <li key={seed.id}>
         <SeedShowCard
