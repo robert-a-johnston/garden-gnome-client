@@ -75,7 +75,7 @@ class Weather extends Component {
                   name='state'
                   value={state}
                   type='text'
-                  placeholder='State'
+                  placeholder='Full State Name, No Abbreviations'
                   onChange={this.handleChange}
                 />
               </Form.Group>
