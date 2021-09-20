@@ -1,0 +1,30 @@
+.weather {
+  
+  justify-content: center;
+  margin: 5%;
+  border-style: solid;
+}
+
+.weatherForm {
+  padding: 5%;
+}
+.weatherTable {
+  table-layout: fixed;
+}
+.tableContainer {
+  padding: 5%;
+}
+.weatherRow {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: rgba(173, 255, 80, .6);
+  justify-content: space-evenly;
+  padding: auto;
+
+}
+@media only screen and (max-width: 700px) {
+  .weatherRow {
+    flex-direction: column;
+    
+  }
+}
