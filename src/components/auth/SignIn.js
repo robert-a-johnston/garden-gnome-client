@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
 import { signIn } from '../../api/auth'
-import { signInFailure } from '../AutoDismissAlert/messages'
+import { signInFailure, signInSuccess } from '../AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -29,13 +29,13 @@ onSignIn = (event) => {
 
   signIn(this.state)
     .then((res) => setUser(res.data.user))
-    // .then(() =>
-    //   msgAlert({
-    //     heading: 'Sign In Success',
-    //     message: signInSuccess,
-    //     variant: 'success'
-    //   })
-    // )
+    .then(() =>
+      msgAlert({
+        heading: 'Sign In Success',
+        message: signInSuccess,
+        variant: 'success'
+      })
+    )
     .then(() => history.push('/garden'))
     .catch((error) => {
       this.setState({ email: '', password: '' })
