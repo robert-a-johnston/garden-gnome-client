@@ -40,7 +40,6 @@ class SeedShowVegetables extends React.Component {
   handleDeleteSeed = (event) => {
     const { user, msgAlert } = this.props
     const id = event.target.id
-    console.log('id', id)
     // api call delete seed from database
     deleteSeed(id, user)
       .then(() => {

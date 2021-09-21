@@ -18,7 +18,6 @@ class GardenIndex extends React.Component {
   // occurs on page render first time
   componentDidMount () {
     const { user, msgAlert } = this.props
-    console.log('this.pr', this.props)
     // API call for index of all seeds
     indexSeeds(user)
       .then((response) =>
@@ -39,7 +38,6 @@ class GardenIndex extends React.Component {
   handleDeleteSeed = (event) => {
     const { user, msgAlert } = this.props
     const id = event.target.id
-    console.log('id', id)
     // api call delete seed from database
     deleteSeed(id, user)
       .then(() => {
