@@ -36,18 +36,30 @@ class SeedShowFavorites extends React.Component {
   }
 
   // deletes seed on button click
+  // button on SeedShowCard
   handleDeleteSeed = (event) => {
     const { user, msgAlert } = this.props
     const id = event.target.id
+    console.log('id', id)
+    // api call delete seed from database
     deleteSeed(id, user)
-    // Redirect to the list of seeds
-    // .then(() => history.push('/show-seeds/'))
-    indexSeeds(user)
-      .then((response) =>
-        this.setState({
-          seeds: response.data.seeds,
-          loading: false
-        })
+      .then(() => {
+        // show seeds after delete
+        indexSeeds(user)
+          .then((response) =>
+            this.setState({
+              seeds: response.data.seeds,
+              loading: false
+            })
+          )
+          .catch(() =>
+            msgAlert({
+              heading: 'Delete seed failed :(',
+              message: showDeleteSeedFailure,
+              variant: 'danger'
+            })
+          )
+      }
       )
       .then(() =>
         msgAlert({

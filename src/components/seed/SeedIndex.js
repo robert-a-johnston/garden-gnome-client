@@ -43,8 +43,27 @@ class SeedIndex extends React.Component {
   handleDeleteSeed = (event) => {
     const { user, msgAlert } = this.props
     const id = event.target.id
+    console.log('id', id)
     // api call delete seed from database
     deleteSeed(id, user)
+      .then(() => {
+        // show seeds after delete
+        indexSeeds(user)
+          .then((response) =>
+            this.setState({
+              seeds: response.data.seeds,
+              loading: false
+            })
+          )
+          .catch(() =>
+            msgAlert({
+              heading: 'Delete seed failed :(',
+              message: showDeleteSeedFailure,
+              variant: 'danger'
+            })
+          )
+      }
+      )
       .then(() =>
         msgAlert({
           heading: 'Deleted seed successfully',
@@ -57,14 +76,6 @@ class SeedIndex extends React.Component {
           heading: 'Delete seed failed :(',
           message: showDeleteSeedFailure,
           variant: 'danger'
-        })
-      )
-    // show seeds after delete
-    indexSeeds(user)
-      .then((response) =>
-        this.setState({
-          seeds: response.data.seeds,
-          loading: false
         })
       )
   }
