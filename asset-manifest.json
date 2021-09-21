@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/garden-gnome-client/static/css/main.e68dc6ae.chunk.css",
-    "main.js": "/garden-gnome-client/static/js/main.bb83a6ce.chunk.js",
-    "main.js.map": "/garden-gnome-client/static/js/main.bb83a6ce.chunk.js.map",
+    "main.js": "/garden-gnome-client/static/js/main.e62318d2.chunk.js",
+    "main.js.map": "/garden-gnome-client/static/js/main.e62318d2.chunk.js.map",
     "runtime-main.js": "/garden-gnome-client/static/js/runtime-main.de67d799.js",
     "runtime-main.js.map": "/garden-gnome-client/static/js/runtime-main.de67d799.js.map",
     "static/js/2.4d071dcd.chunk.js": "/garden-gnome-client/static/js/2.4d071dcd.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.de67d799.js",
     "static/js/2.4d071dcd.chunk.js",
     "static/css/main.e68dc6ae.chunk.css",
-    "static/js/main.bb83a6ce.chunk.js"
+    "static/js/main.e62318d2.chunk.js"
   ]
 }
