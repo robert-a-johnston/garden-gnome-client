@@ -58,7 +58,8 @@ class App extends Component {
 
     return (
       <>
-        <h1>Garden Gnome</h1><Fragment>
+        <h1>Garden Gnome</h1>
+        <Fragment>
           <Header user={user} />
           <Footer/>
           {msgAlerts.map((msgAlert) => (
